@@ -4,9 +4,9 @@
             <p>{{communicate}}</p>
             <label for="name">Podaj nazwe</label>
         </div>
-        <input type="text" id="name" v-model="name" placeholder="podaj nazwę"/>
+        <input type="text" id="name" @keyup.enter="saveTask" v-model="name" placeholder="podaj nazwę"/>
         <div>
-            <button type="submit" @click="saveTask">Zapisz</button>
+            <button type="submit"  @click="saveTask">Zapisz</button>
         </div>
     </div>
 </template>
