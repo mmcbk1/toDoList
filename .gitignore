@@ -1,4 +1,6 @@
 /target/
+todofront/node_modules/
+node_modules/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
