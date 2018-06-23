@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <task-create @addedTask="addedTask($event)"></task-create>
+    <task-list :item="item"></task-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Create from './components/task/Create';
+import List from './components/task/List';
 
 export default {
   name: 'app',
+    data(){
+      return{
+          item:'',
+      }
+    },
+    methods:{
+      addedTask(val){
+          this.item = val;
+      }
+    },
   components: {
-    HelloWorld
+    'task-create':Create,
+      'task-list':List
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

@@ -13,13 +13,14 @@ public class TaskController {
     @Autowired
     TaskRepository taskRepository;
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path = "/tasks")
     public Iterable<Task> GetTast()
     {
         return taskRepository.findAll();
     }
 
-
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping(path = "task/create")
     public Task postTask(@RequestBody Task task)
     {
